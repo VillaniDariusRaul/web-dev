@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Project Ideea page 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <p>Acesta este un exemplu de <br> formular de contact care utilizează toate tag-urile și atributele specificate.</p>
+    <form action="/submit-form" method="post">
+        <fieldset>
+            <legend>Connect</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" maxlength="50" required><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required max="100"><br><br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" step="5"> <br><br>
+            <label for="message">biografie:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" maxlength="500" required></textarea><br><br>
+            
+            <select>
+                <option value="F" selected>female</option>
+                <option value="M">male</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit" size="20">
+            <br>
+            <p>get notifications?</p>
+            <input type="checkbox" checked>
+        </fieldset>
+        <p><span style="color: red;"> toate campurile obligatorii</span></p>
+        <center>
+            <a href="projectIdeea.html" target="_blank" title = "nextPage">
+                <img src="arrow.png" alt="" >
+            </a>
+        </center>
+</body> 
+</html>
