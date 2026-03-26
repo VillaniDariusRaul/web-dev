@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -270,4 +271,278 @@
 
 
     randeazaFilme();
+=======
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog movie</title>
+</head>
+<body>
+
+    <header>
+        <h1>MovieMaster Pro</h1>
+        <h2>Gestionați-vă colecția personală de filme</h2>
+
+        <p>
+            Bine ați venit! Folosiți <b>formularul de mai jos</b> pentru a adăuga titluri noi. 
+            Este <i>important</i> să completați toate câmpurile, apoi să apăsați <u>Salvare</u>.
+        </p>
+
+        <img src="film.jpg" 
+             width="150" 
+             height="150" 
+             title="Logo">
+
+        <div>
+            <p>Informație suplimentară: Catalogul suportă formatul 4K Ultra HD.</p>
+        </div>
+    </header>
+
+    <hr>
+
+    <nav>
+        <h3>Navigație rapidă</h3>
+        <ul>
+            <li><a href="#formular-film">Mergi la Adăugare Film (Ancoră)</a></li>
+            <li><a href="https://www.imdb.com" target="_blank" name="imdb-link">Vizitează IMDB</a></li>
+            <li><a href="https://www.rottentomatoes.com" target="_blank" name="rt-link">Vizitează Rotten Tomatoes</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <section id="formular-film">
+        <fieldset>
+            <legend>Adăugare film nou</legend>
+            <form action="#" method="post" id="formularAdaugare">
+                <p>
+                    <label>Titlu film:</label><br>
+                    <input type="text" name="titlu_film" maxlength="50" size="30" value="" placeholder="Introduceți numele filmului">
+                </p>
+
+                <p>
+                    <label>Anul apariției:</label><br>
+                    <input type="number" name="an_film" min="1900" max="2026" step="1" value="2024">
+                </p>
+
+                <p>
+                    <label>Genul filmului:</label><br>
+                    <select name="genuri" multiple size="5" id="selectGen">
+                        <option value="actiune">Acțiune</option>
+                        <option value="comedie" selected>Comedie</option>
+                        <option value="drama">Dramă</option>
+                        <option value="horror">Horror</option>
+                        <option value="sf">SF</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label>Status:</label><br>
+                    <input type="checkbox" name="vizionat" checked> Vizionat <br>
+                    <input type="checkbox" name="favorit"> Favorit <br>
+                    <input type="checkbox" name="indisponibil" disabled> Indisponibil
+                </p>
+
+                <p>
+                    <label>Format:</label><br>
+                    <input type="radio" name="format" value="dvd"> DVD
+                    <input type="radio" name="format" value="bluray"> Blu-ray
+                </p>
+
+                <p>
+                    <label>Observații (Notă sistem):</label><br>
+                    <textarea name="note" readonly cols="40" rows="3">Acest text nu poate fi modificat de utilizator.</textarea>
+                </p>
+
+                <input type="submit" value="Salvează Filmul">
+                <input type="reset" value="Resetează Formular">
+            </form>
+        </fieldset>
+    </section>
+
+    <br>
+
+    <section>
+        <h3>Lista curentă de filme</h3>
+        <table border="1" width="80%" bgcolor="#ffffff" align="center">
+            <thead>
+                <tr bgcolor="#cccccc">
+                    <th>Titlu</th>
+                    <th>Regizor</th>
+                    <th>An</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody id = "corpTabel">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" align="right">Total filme în listă: 4</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <hr>
+
+    <section>
+        <h3>Instrucțiuni proces</h3>
+        <ol start="1" type="I">
+            <li>Căutați titlul pe internet.</li>
+            <li>Verificați anul lansării.</li>
+            <li>Completați formularul de mai sus.</li>
+            <li>Apăsați butonul de submit.</li>
+        </ol>
+
+        <h3>Genuri disponibile în sistem</h3>
+        <ul>
+            <li>Acțiune</li>
+            <li>Comedie</li>
+            <li>Documentar</li>
+            <li>Animație</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Catalog Filme Virtual. Toate drepturile rezervate.</p>
+    </footer>
+
+</body>
+</html>
+
+<script>
+    var NumeCiname = "Cinama City";
+    let nrFilme = 10;
+    const pretBilet = 25.5;
+    alert(NumeCiname)
+    console.log(nrFilme);
+    document.write(pretBilet);
+    function calculeazaCostTotal(numarBilete) {
+        if (numarBilete > 5) {
+            return numarBilete * pretBilet * 0.8; 
+        } else {
+            return numarBilete * pretBilet;
+        }
+    }
+    var calculezRatingmediu = function(r1,r2,r3){
+        var suma = r1 + r2 + r3
+        return (suma/3).toFixed(1)
+    }
+    const toStringInfo = (titlu,an,rating) => {
+        return `Titlu: ${titlu}, An: ${an}, Rating: ${rating}`;
+    }
+
+    let costGrup = calculeazaCostTotal(7); 
+    console.log("Cost grup (7 persoane): " + costGrup + " RON");
+
+    let ratingMediuExemplu = calculezRatingmediu(8.5, 7.2, 9.0);
+    console.log("Rating mediu calculat: " + ratingMediuExemplu);
+
+    let infoFilm = toStringInfo("Inception", 2010, ratingMediuExemplu);
+    document.write("<p><b>Informații Film:</b> " + infoFilm + "</p>");
+
+
+    let catalogFilme = [
+    { titlu: "Inception", regizor: "Nolan", an: 2010, rating: 8.8, gen: "SF", vizionat: true },
+    { titlu: "Matrix", regizor: "Wachowskis", an: 1999, rating: 8.7, gen: "SF", vizionat: true },
+    { titlu: "The Menu", regizor: "Mylod", an: 2022, rating: 7.2, gen: "Horror", vizionat: false },
+    { titlu: "Interstellar", regizor: "Nolan", an: 2014, rating: 8.6, gen: "SF", vizionat: false },
+    { titlu: "Parasite", regizor: "Bong Joon-ho", an: 2019, rating: 8.5, gen: "Drama", vizionat: true },
+    { titlu: "Smile", regizor: "Finn", an: 2022, rating: 6.5, gen: "Horror", vizionat: false }];
+
+    console.log("--- Filme Top (>8.0) ---");
+    catalogFilme.forEach(f => { if(f.rating > 8) console.log(f.titlu); });
+
+    let stringuriFilme = catalogFilme.map(f => `${f.titlu} (${f.an}) - ${f.rating}/10`);
+    let nevizionate = catalogFilme.filter(f => !f.vizionat);
+    let sumaRating = catalogFilme.reduce((acc, f) => acc + f.rating, 0);
+
+    var cinema = {
+    nume: "City Cinema",
+    oras: "București",
+    filme: catalogFilme,
+    calculeazaRatingMediu: function() {
+        let suma = this.filme.reduce((acc, f) => acc + f.rating, 0);
+        return (suma / this.filme.length).toFixed(2);
+    },
+    cautaFilm: function(titlu) {
+        return this.filme.find(f => f.titlu.toLowerCase() === titlu.toLowerCase());
+    }};
+
+    console.log("Media rating cinema: " + cinema.calculeazaRatingMediu());
+    console.log("Căutare 'Matrix':", cinema.cautaFilm("Matrix"));
+
+ 
+    function randeazaFilme() {
+        const tbody = document.getElementById("corpTabel");
+        tbody.innerHTML = ""; 
+
+        cinema.filme.forEach(film => {
+            let tr = document.createElement("tr");
+
+            let tdTitlu = document.createElement("td");
+            tdTitlu.innerText = film.titlu;
+
+            let tdRegizor = document.createElement("td");
+            tdRegizor.innerText = film.regizor;
+
+            let tdAn = document.createElement("td");
+            tdAn.innerText = film.an;
+
+            let tdRating = document.createElement("td");
+            tdRating.innerText = film.rating;
+
+            tr.appendChild(tdTitlu);
+            tr.appendChild(tdRegizor);
+            tr.appendChild(tdAn);
+            tr.appendChild(tdRating);
+
+            tbody.appendChild(tr);});
+
+    const celulaTotal = document.querySelector("tfoot td");
+    if (celulaTotal) {
+        celulaTotal.innerText = "Total filme în listă: " + cinema.filme.length;
+    }}
+
+   var form = document.getElementById("formularAdaugare")
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        let titlu = form.elements["titlu_film"].value;
+        let an = form.elements["an_film"].value;
+        var selectGenuri = document.getElementById("selectGen");
+        var genuriSelectate = Array.from(selectGenuri.selectedOptions);
+
+        if (titlu.trim() === "") {
+        alert("Eroare: Titlul filmului nu poate fi gol!");
+        return;
+        }
+
+        if (isNaN(an) || an < 1900 || an > 2026) {
+        alert("Eroare: Anul trebuie să fie între 1900 și 2026!");
+        return;
+        }  
+
+        if (genuriSelectate.length === 0) {
+        alert("Eroare: Vă rugăm să selectați cel puțin un gen!");
+        return;
+        }
+
+        var filmNou = {
+        titlu: titlu,
+        regizor: "Regizor Nou", 
+        an: an,
+        rating: 0.0,
+        gen: genuriSelectate[0].text, 
+        vizionat: form.elements["vizionat"].checked
+        };
+        cinema.filme.push(filmNou);
+        randeazaFilme();
+        alert("Succes: Filmul '" + titlu + "' a fost adăugat în catalog!");
+        form.reset();
+    });
+
+
+    randeazaFilme();
+>>>>>>> 9278f2d75c596a998094959700366390a08e3ac4
 </script>
