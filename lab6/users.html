@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Page</title>
+</head>
+<body>
+    <h1 id="welcome-msg">Loading...</h1>
+    <p>Welcome to your personal dashboard.</p>
+    <a href="/">Logout</a>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name') || 'Guest';
+        const role = params.get('role') || 'Unknown';
+        document.getElementById('welcome-msg').innerText = `Hello ${name}, you are a ${role}`;
+    </script>
+</body>
+</html>

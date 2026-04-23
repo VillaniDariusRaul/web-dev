@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+</head>
+<body>
+    <h1 id="welcome-msg">Loading...</h1>
+    <p>You have full access to the system.</p>
+    <a href="/">Logout</a>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name') || 'Guest';
+        const role = params.get('role') || 'Unknown';
+        document.getElementById('welcome-msg').innerText = `Hello ${name}, you are an ${role}`;
+    </script>
+</body>
+</html>
